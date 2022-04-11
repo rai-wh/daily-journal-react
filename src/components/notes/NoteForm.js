@@ -7,7 +7,7 @@ export const NoteForm = () => {
         date: "",
         concept: "",
         entry: "",
-        moodId: 1
+        mood: ""
     })
 
     const makeTicket = (event) => {
@@ -16,7 +16,7 @@ export const NoteForm = () => {
             date: note.date,
             concept: note.concept,
             entry: note.entry,
-            moodId: note.moodId
+            mood: note.mood
         }
 
         const uploadNote = {
@@ -29,7 +29,7 @@ export const NoteForm = () => {
 
         return fetch("http://localhost:8088/entries", uploadNote)
             .then(() => {
-                history.push("/")
+                window.location.reload(false);
             })
     }
 
@@ -88,6 +88,75 @@ export const NoteForm = () => {
                         className="form-control"
                         placeholder="Entry"
                         />
+                </div>
+            </fieldset>
+            <fieldset>
+                <div className="form">
+                    <label htmlFor="mood">Mood:</label>
+                    <input
+                        onChange={
+                            (event) => {
+                                const copy = {...note}
+                                copy.mood = event.target.value
+                                change(copy)
+                            }
+                        }
+                        required autoFocus
+                        type="radio"
+                        className="form-control"
+                        name="Mood"
+                        label="Happy"
+                        value="Happy"
+                        />
+                        Happy
+                        <input
+                        onChange={
+                            (event) => {
+                                const copy = {...note}
+                                copy.mood = event.target.value
+                                change(copy)
+                            }
+                        }
+                        required autoFocus
+                        type="radio"
+                        className="form-control"
+                        name="Mood"
+                        label="Tired"
+                        value="Tired"
+                        />
+                        Tired
+                        <input
+                        onChange={
+                            (event) => {
+                                const copy = {...note}
+                                copy.mood = event.target.value
+                                change(copy)
+                            }
+                        }
+                        required autoFocus
+                        type="radio"
+                        className="form-control"
+                        name="Mood"
+                        label="Frustrated"
+                        value="Frustrated"
+                        />
+                        Frustrated
+                        <input
+                        onChange={
+                            (event) => {
+                                const copy = {...note}
+                                copy.mood = event.target.value
+                                change(copy)
+                            }
+                        }
+                        required autoFocus
+                        type="radio"
+                        className="form-control"
+                        name="Mood"
+                        label="Excited"
+                        value="Excited"
+                        />
+                        Excited
                 </div>
             </fieldset>
             <button onClick={makeTicket} className="btn btn-primary">

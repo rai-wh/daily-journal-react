@@ -26,7 +26,7 @@ export const Journal = () => {
                         return <p key={`note--${note.id}`}>
                             On {note.date}, I learned about {note.concept}.&nbsp;
                             {note.entry}&nbsp;
-                            I'm feeling {note.moodId}
+                            I'm feeling {note.mood}.
                             </p>
                      }
                 )
