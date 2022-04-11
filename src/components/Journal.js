@@ -27,6 +27,8 @@ export const Journal = () => {
                             On {note.date}, I learned about {note.concept}.&nbsp;
                             {note.entry}&nbsp;
                             I'm feeling {note.mood}.
+                            I went to bed yesterday at {note.sleep} and woke up at {note.wake}&nbsp;
+                            I slept for {note.hrs} hours and worked out for {note.exercise} minutes.
                             </p>
                      }
                 )

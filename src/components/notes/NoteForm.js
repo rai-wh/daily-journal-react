@@ -7,7 +7,11 @@ export const NoteForm = () => {
         date: "",
         concept: "",
         entry: "",
-        mood: ""
+        mood: "",
+        sleep: "",
+        wake: "",
+        hrs: "",
+        exercise: ""
     })
 
     const makeTicket = (event) => {
@@ -16,7 +20,11 @@ export const NoteForm = () => {
             date: note.date,
             concept: note.concept,
             entry: note.entry,
-            mood: note.mood
+            mood: note.mood,
+            sleep: note.sleep,
+            wake: note.wake,
+            hrs: note.hrs,
+            exercise: note.exercise
         }
 
         const uploadNote = {
@@ -157,6 +165,94 @@ export const NoteForm = () => {
                         value="Excited"
                         />
                         Excited
+                        <input
+                        onChange={
+                            (event) => {
+                                const copy = {...note}
+                                copy.mood = event.target.value
+                                change(copy)
+                            }
+                        }
+                        required autoFocus
+                        type="radio"
+                        className="form-control"
+                        name="Mood"
+                        label="Bad"
+                        value="Bad"
+                        />
+                        Bad
+                </div>
+            </fieldset>
+            <fieldset>
+                <div className="form">
+                    <label htmlFor="date">When I slept:</label>
+                    <input
+                        onChange={
+                            (event) => {
+                                const copy = {...note}
+                                copy.sleep = event.target.value
+                                change(copy)
+                            }
+                        }
+                        required autoFocus
+                        type="text"
+                        className="form-control"
+                        placeholder="When I fell asleep"
+                        />
+                </div>
+            </fieldset>
+            <fieldset>
+                <div className="form">
+                    <label htmlFor="date">When I woke up:</label>
+                    <input
+                        onChange={
+                            (event) => {
+                                const copy = {...note}
+                                copy.wake = event.target.value
+                                change(copy)
+                            }
+                        }
+                        required autoFocus
+                        type="text"
+                        className="form-control"
+                        placeholder="When I woke up"
+                        />
+                </div>
+            </fieldset>
+            <fieldset>
+                <div className="form">
+                    <label htmlFor="date">Hrs Slept:</label>
+                    <input
+                        onChange={
+                            (event) => {
+                                const copy = {...note}
+                                copy.hrs = event.target.value
+                                change(copy)
+                            }
+                        }
+                        required autoFocus
+                        type="text"
+                        className="form-control"
+                        placeholder="How long I slept"
+                        />
+                </div>
+            </fieldset>
+            <fieldset>
+                <div className="form">
+                    <label htmlFor="date">Exercise:</label>
+                    <input
+                        onChange={
+                            (event) => {
+                                const copy = {...note}
+                                copy.exercise = event.target.value
+                                change(copy)
+                            }
+                        }
+                        required autoFocus
+                        type="text"
+                        className="form-control"
+                        placeholder="How long I worked out"
+                        />
                 </div>
             </fieldset>
             <button onClick={makeTicket} className="btn btn-primary">
