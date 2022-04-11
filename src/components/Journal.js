@@ -18,19 +18,20 @@ export const Journal = () => {
 
     return (
         <>
+            <div className="notes">
             <h1>My Daily Journal</h1>
             {
                 notes.map(
                     (note) => {
                         return <p key={`note--${note.id}`}>
-                            On {note.date}, I learned about {note.concept}. 
-                            {note.entry}
+                            On {note.date}, I learned about {note.concept}.&nbsp;
+                            {note.entry}&nbsp;
                             I'm feeling {note.moodId}
                             </p>
                      }
                 )
             }
-            )
+            </div>
         </>
     )
 }
